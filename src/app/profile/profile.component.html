@@ -1,0 +1,100 @@
+
+<div class="container left">
+  <img class="arrow" src="assets/user.png" alt="User pic">
+</div>
+<div class="container right">
+  <div class="right-border">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="form-group">
+        <label for="displayName" class="displayNameText">Display Name</label>
+        <label for="firstName" class="firstNameText">First Name</label>
+        <label for="lastName" class="lastNameText">Last Name</label>
+        <input type="text" class="form-control displayName"  name="displayName"
+        placeholder="display name" ngModel required #nameCtrl1="ngModel">
+        <input type="text" class="form-control firstName"  name="firstName" placeholder="first name" ngModel required #nameCtrl="ngModel">
+        <input type="text" class="form-control lastName" name="lastName" placeholder="last name" ngModel>
+        <br>
+        <span class="help-block" *ngIf="nameCtrl.invalid && nameCtrl1.touched">Display Name Required</span>
+        <span class="help-block2" *ngIf="nameCtrl.invalid && nameCtrl.touched">First Name Required</span>
+      </div>
+      <div class="form-group">
+        <label for="aboutYou" class="aboutYouText">About Yourself</label>
+        <input type="text" class="form-control aboutYou"  name="aboutYou" placeholder="e.g I am a developer"
+         maxlength="100" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="interest" class="areaOfInterestText">Your area of Interest</label>
+
+      <div class="form-check">
+        <input class="form-check-input checkbox" type="checkbox" value="" id="designer" name="designer" ngModel>
+        <label class="form-check-label" for="designer">Designer</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input checkbox" type="checkbox" value="" id="developer" name="developer" ngModel>
+        <label class="form-check-label" for="developer"> Developer </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input checkbox" type="checkbox" value="" id="projectManager" name="projectManager" ngModel>
+        <label class="form-check-label" for="projectManager">Project Manager</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input checkbox" type="checkbox" value="" id="sales" name="sales" ngModel>
+        <label class="form-check-label" for="sales">Sales</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="interest" class="areaOfInterestText">Are you a student or professional</label>
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" (click)="changeVisible('no')" type="radio" name="gridRadios" id="student" value="option1" checked
+            ngModel>
+            <label class="form-check-label" for="student">
+              Student
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" (click)="changeVisible('yes')" type="radio" name="gridRadios" id="professional" value="option2"
+             ngModel>
+            <label class="form-check-label" for="gridRadios2">
+              Professional
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="optional"  *ngIf="isVisible">
+      <div class="optional2">
+        <div class="form-group">
+          <label class="form-check-label experience" for="experience">How much experience do you have?</label>
+          <br>
+            <input class="form-check-input" type="radio" name="gridRadioss" id="professional" value="option1" ngModel>
+            <label class="form-check-label radio-inliine" for="gridRadios1">0-5</label>
+            <input class="form-check-input" type="radio" name="gridRadioss" id="professional" value="option2" ngModel>
+            <label class="form-check-label radio-inliine" for="gridRadios2">5-10</label>
+            <input class="form-check-input" type="radio" name="gridRadioss" id="professional" value="option3" ngModel>
+            <label class="radio-inline" for="gridRadios3">10 & Above</label>
+        </div>
+        <div class="form-group">
+          <label class="form-check-label expertise" for="expertise">What is your expertise?</label>
+          <br>
+            <input class="form-check-input" type="radio" name="gridRadiosss" id="professional" value="option1" ngModel>
+            <label class="form-check-label radio-inliine" for="gridRadios1">Java</label>
+            <input class="form-check-input" type="radio" name="gridRadiosss" id="professional" value="option2" ngModel>
+            <label class="form-check-label radio-inliine" for="gridRadios2">React</label>
+            <input class="form-check-input" type="radio" name="gridRadiosss" id="professional" value="option3" ngModel>
+            <label class="radio-inline" for="gridRadios3">Backend</label>
+        </div>
+        <label for="lastName" class="role">Mention your Role</label>
+        <br>
+        <input type="text" maxlength="200" pattern="^[a-zA-Z]+$" class="form-control roleDesc"  name="role" placeholder="e.g Backend Developer"
+         ngModel #nameCtrl3="ngModel">
+         <span class="help-block3" *ngIf="nameCtrl3.invalid && nameCtrl3.touched">Only Characters allowed</span>
+      </div>
+    </div>
+    <br><br><br>
+      <button type="submit" class="btn btn-primary buton" [disabled]="form.invalid" >Submit</button>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

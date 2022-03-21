@@ -1,0 +1,19 @@
+.buton{
+  background-color: #E25B32;
+  border: none;
+  margin: 2px 2px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  height: 30px;
+  width: 90px;
+  float: right;
+}
+.dialog
+{
+  height: 100%;
+  width: 100%;
+}
+.header{
+background-color: #F5F5F5;
+}

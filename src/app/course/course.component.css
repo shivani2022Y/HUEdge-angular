@@ -1,0 +1,52 @@
+body { margin: 0; font-family: 'Montserrat', sans-serif; }
+.buton {
+  background-color: #E25B32;
+  border: none;
+  margin: 2px 20px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  height: 30px;
+  top: 440px;
+}
+.list-group-item{
+  border: none;
+}
+.card{
+  height: 20%;
+  width: 100%;
+}
+.title{
+  font-weight: bold;
+  width: 30%;
+  font-size: 120%;
+  display:inline-block;
+  padding-left: 2%;
+  float:left;
+}
+.author{
+  color: #AAAAAA;
+  width: 25%;
+}
+.dprice{
+  padding: 10px;
+  font-weight: bold;
+  width: 10%;
+}
+.price{
+  text-decoration: line-through;
+  color: #AAAAAA;
+  width: 10%;
+}
+.star{
+  padding: 2%;
+}
+.course-image{
+  background-color: #F2F2F2;
+  height: 50px;
+  width: 50px;
+  display: inline;
+  width: 7%;
+  float: left;
+}

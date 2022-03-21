@@ -1,0 +1,20 @@
+.left{
+  float: left;
+  width: 65%;
+  height: 200%;
+  padding-left: 3%;
+  padding-bottom: 200px;
+}
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #E25B32;
+  -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+.header{
+  width:50%;
+  padding-left: 6%;
+  padding-top: 2%;
+  margin-left: 0%;
+  font-size: 180%;
+}

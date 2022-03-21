@@ -1,0 +1,50 @@
+<div class="container left">
+  <h5 class="header">{{ courseHeader }}</h5>
+  <ul class="list-group">
+    <app-course *ngFor="let course of courses | paginate: { itemsPerPage: 5, currentPage: p }" [course]="course">
+    </app-course>
+  </ul>
+  <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+  <div>
+  </div>
+</div>
+
+<div class="container right">
+  <div class="search-box">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <input type="search" placeholder="Search.." name="search"
+      class="form-control" ngModel required
+    #nameCtrl="ngModel">
+      <button class="buton" type="submit" [disabled]="form.invalid">
+        <img class="arrow" src="assets/search.svg"></button>
+    </form>
+  </div >
+  <div class="checkout-card">
+    <mat-card class="card">
+      <h2 class="cart-header">Your Cart Details</h2>
+      <hr>
+      <div class="cart-div">
+        <P *ngIf="isShown" class="cart-description">Your cart is empty right now. Please add courses in the cart from the list</P>
+      </div>
+      <div class="cart-list">
+        <ul class="list-group">
+          <div class="list-group-item" *ngFor="let course of cartCourses">
+              <div>
+                <p class="course-image"></p>
+              <span class="course-cart-title">{{course.title}}</span>
+              </div>
+              <span class="course-cart-price">Rs {{ course.discounted_price}}/- </span>
+          </div>
+      </ul>
+      </div>
+
+
+      <hr class="footer-line">
+      <span class="cart-value">Total Cart Value</span>
+      <br>
+      <br>
+      <span class="price">Rs {{cartValue}}/-</span>
+      <button *ngIf="!isShown" class="cart-button" routerLink="/courses/cart" routerLinkActive="active">Go to Checkout</button>
+    </mat-card>
+  </div>
+</div>

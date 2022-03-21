@@ -1,0 +1,12 @@
+<div class="container left">
+  <h5 class="header">{{ courseHeader }}</h5>
+  <ul class="list-group">
+    <div>loading</div>
+    <app-course *ngFor="let course of cartCourses
+    | paginate: { itemsPerPage: 5, currentPage: p }" [course]="course">
+    </app-course>
+  </ul>
+  <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+  <div>
+  </div>
+</div>

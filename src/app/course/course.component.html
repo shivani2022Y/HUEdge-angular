@@ -1,0 +1,17 @@
+<div class="container">
+  <a style="cursor: pointer" class="list-group-item" aria-current="true">
+    <mat-card class = 'card'>
+      <p class="course-image"></p>
+      <h6 class ="title">{{ course.title }}</h6>
+      <div >
+        <span class="author"> {{course.author}} </span>
+        <img class="star" [src]="getImage" (click)="onAssign('wishlist')" alt="q">
+        <span class="dprice">Rs {{ course.discounted_price}}/- </span>
+        <span class="price">Rs {{ course.actual_price}} </span>
+        <button type="button" class="buton" (click)="onAssign('addToCart')">Add To Cart</button>
+        <img class="arrow" src="assets/blackRightArrow.svg" (click)=courseSet() alt="Course Description"
+        routerLink="/courses/course-description" routerLinkActive="active" >
+      </div>
+  </mat-card>
+  </a>
+</div>

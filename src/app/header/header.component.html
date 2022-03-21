@@ -1,0 +1,38 @@
+<div>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container-fluid shadow-sm p-3 mb-3 bg-white rounded">
+      <li class="nav-item">
+        <img src="assets/Logo-2.png" alt="HashedIn by Deloitte" routerLink="/courses" routerLinkActive="active">
+      </li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/courses" routerLinkActive="active">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/courses/wishlist" routerLinkActive="active">My WishList</a>
+            </li>
+            <li class="nav-item">
+              <img src="assets/shopping-cart.svg" routerLink="/courses/cart" routerLinkActive="active" alt="Cart">
+            </li>
+            <li class="nav-item">
+              <img src="assets/noun_profile_2068277.svg" alt="Profile" routerLink="/user-profile" routerLinkActive="active">
+            </li>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <img class="logo" src="assets/react.png" alt="React logo">
+  <div class="head-message">
+    <h1>{{ headerMessage }}</h1>
+  </div>
+</div>
+

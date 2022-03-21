@@ -1,0 +1,29 @@
+<div class="rectangle">
+  <h1 class="title">{{course.title}}</h1>
+  <h2 class="description"> {{course.description}} </h2>
+  <h4 class="author"> {{ course.author }} </h4>
+  <ul class="list-group">
+    <span *ngFor="let tag of course.tags"> </span>
+  </ul>
+</div>
+<div class="container">
+  <div class="left">
+    <h2 class="details-header">Course Details</h2> <br>
+    <p class="details">{{course.details}}</p>
+  </div>
+  <div class="right">
+    <iframe class="video" src="https://www.youtube.com/embed/kuJNVKHHpGk">
+    </iframe>
+    <br>
+    <div class="course-details">
+      <span class="dprice">Rs {{ course.discounted_price}}/- </span> <br>
+      <span class="price">Rs {{ course.actual_price}} </span> <br>
+      <div class="buttons">
+        <button type="button" class="buton1" (click)="onAssign('addToCart')">Add To Cart</button>
+        <button type="button" class="buton2" (click)="onAssign('wishlist')">Add To Wishlist</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
